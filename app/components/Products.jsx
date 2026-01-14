@@ -2,8 +2,10 @@
 
 import { ArrowRight, Package, Shield, Zap } from "lucide-react";
 import Link from "next/link";
+import { useThemeContext } from "../contexts/ThemeContext";
 
-export default function Products({ darkMode, theme }) {
+export default function Products() {
+  const { darkMode, theme } = useThemeContext();
   const productCategories = [
     {
       id: 1,
@@ -163,20 +165,6 @@ export default function Products({ darkMode, theme }) {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .text-gradient {
-          background: linear-gradient(
-            135deg,
-            #3b82f6 0%,
-            #8b5cf6 50%,
-            #3b82f6 100%
-          );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-      `}</style>
     </section>
   );
 }

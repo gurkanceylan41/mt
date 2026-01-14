@@ -1,8 +1,10 @@
 "use client";
 
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { useThemeContext } from "../contexts/ThemeContext";
 
-export default function About({ darkMode, theme }) {
+export default function About() {
+  const { darkMode, theme } = useThemeContext();
   const aboutFeatures = [
     "ISO 9001 Kalite Yönetim Sistemi sertifikası",
     "Türkiye genelinde 24 saat içinde teslimat",

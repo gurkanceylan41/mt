@@ -1,4 +1,5 @@
 import "./globals.css";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 export const metadata = {
   title: "Merkez Tedarik - Premium Ambalaj Çözümleri",
@@ -9,7 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="tr">
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

@@ -2,6 +2,7 @@
 
 import { Package, Truck, Shield, Award } from "lucide-react";
 import { features } from "../data";
+import { useThemeContext } from "../contexts/ThemeContext";
 
 const icons = {
   0: <Package size={28} />,
@@ -10,7 +11,8 @@ const icons = {
   3: <Award size={28} />,
 };
 
-export default function Features({ darkMode, theme }) {
+export default function Features() {
+  const { darkMode, theme } = useThemeContext();
   return (
     <section className={`py-24 ${theme.bgAlt} relative`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">

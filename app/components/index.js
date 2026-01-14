@@ -7,3 +7,6 @@ export { default as Testimonials } from "./Testimonials";
 export { default as CTA } from "./CTA";
 export { default as Contact } from "./Contact";
 export { default as Footer } from "./Footer";
+
+// Common components
+export * from "./common";

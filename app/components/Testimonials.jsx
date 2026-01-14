@@ -3,8 +3,10 @@
 import { useState, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { testimonials } from "../data";
+import { useThemeContext } from "../contexts/ThemeContext";
 
-export default function Testimonials({ darkMode, theme }) {
+export default function Testimonials() {
+  const { darkMode, theme } = useThemeContext();
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   useEffect(() => {

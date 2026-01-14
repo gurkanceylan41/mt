@@ -12,17 +12,15 @@ import {
   Contact,
   Footer,
 } from "./components";
-import { useTheme } from "./hooks/useTheme";
+import { useThemeContext } from "./contexts/ThemeContext";
 
 export default function Home() {
-  const { darkMode, toggleDarkMode, theme } = useTheme();
+  const { darkMode, theme, mounted } = useThemeContext();
   const [scrolled, setScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const heroRef = useRef(null);
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
@@ -48,35 +46,23 @@ export default function Home() {
     <div
       className={`min-h-screen transition-colors duration-500 ${theme.bg} overflow-x-hidden`}
     >
-      <Navbar
-        darkMode={darkMode}
-        toggleDarkMode={toggleDarkMode}
-        theme={theme}
-        scrolled={scrolled}
-        mounted={mounted}
-      />
+      <Navbar scrolled={scrolled} />
 
-      <Hero
-        darkMode={darkMode}
-        theme={theme}
-        mounted={mounted}
-        mousePosition={mousePosition}
-        heroRef={heroRef}
-      />
+      <Hero mousePosition={mousePosition} heroRef={heroRef} />
 
-      <Features darkMode={darkMode} theme={theme} />
+      <Features />
 
-      <Products darkMode={darkMode} theme={theme} />
+      <Products />
 
-      <About darkMode={darkMode} theme={theme} />
+      <About />
 
-      <Testimonials darkMode={darkMode} theme={theme} />
+      <Testimonials />
 
       <CTA />
 
-      <Contact darkMode={darkMode} theme={theme} />
+      <Contact />
 
-      <Footer darkMode={darkMode} />
+      <Footer />
     </div>
   );
 }

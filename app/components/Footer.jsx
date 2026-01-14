@@ -2,8 +2,10 @@
 
 import { Phone, Mail, MapPin } from "lucide-react";
 import { navLinks } from "../data";
+import { useThemeContext } from "../contexts/ThemeContext";
 
-export default function Footer({ darkMode }) {
+export default function Footer() {
+  const { darkMode } = useThemeContext();
   const productLinks = [
     "Makina Streç Film",
     "El Streç Film",

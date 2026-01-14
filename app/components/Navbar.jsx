@@ -3,14 +3,10 @@
 import { useState } from "react";
 import { Sun, Moon, Menu, X, ArrowUpRight } from "lucide-react";
 import { navLinks } from "../data";
+import { useThemeContext } from "../contexts/ThemeContext";
 
-export default function Navbar({
-  darkMode,
-  toggleDarkMode,
-  theme,
-  scrolled,
-  mounted,
-}) {
+export default function Navbar({ scrolled }) {
+  const { darkMode, toggleDarkMode, theme, mounted } = useThemeContext();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
