@@ -11,7 +11,7 @@ export default function Contact() {
     useContactForm();
 
   return (
-    <section id="iletisim" className={`py-24 ${theme.bg} relative`}>
+    <section id="iletisim" className={`py-32 ${theme.bg} relative`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <ContactInfo />

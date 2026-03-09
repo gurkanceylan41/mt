@@ -23,14 +23,15 @@ export function ThemeProvider({ children }) {
   };
 
   const theme = {
-    bg: darkMode ? "bg-[#0a0a0f]" : "bg-[#fafafa]",
-    bgAlt: darkMode ? "bg-[#12121a]" : "bg-white",
-    bgCard: darkMode ? "bg-[#16161f]" : "bg-white",
-    text: darkMode ? "text-[#e4e4e7]" : "text-[#18181b]",
-    textMuted: darkMode ? "text-[#71717a]" : "text-[#52525b]",
-    accent: "text-[#3b82f6]",
-    accentBg: "bg-[#3b82f6]",
-    border: darkMode ? "border-[#27272a]" : "border-[#e4e4e7]",
+    bg: darkMode ? "bg-[#0a0a0a]" : "bg-[#ffffff]",
+    bgAlt: darkMode ? "bg-[#111111]" : "bg-[#fafaf8]",
+    bgCard: darkMode ? "bg-[#161616]" : "bg-[#ffffff]",
+    text: darkMode ? "text-[#f0ede8]" : "text-[#111111]",
+    textMuted: darkMode ? "text-[#8a8580]" : "text-[#6b6b6b]",
+    accent: darkMode ? "text-[#c4a265]" : "text-[#9a7740]",
+    accentBg: darkMode ? "bg-[#c4a265]" : "bg-[#9a7740]",
+    accentHex: darkMode ? "#c4a265" : "#9a7740",
+    border: darkMode ? "border-[#2a2825]" : "border-[#e8e5df]",
   };
 
   return (

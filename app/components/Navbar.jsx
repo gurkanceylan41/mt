@@ -14,8 +14,8 @@ export default function Navbar({ scrolled }) {
       className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled
           ? `${
-              darkMode ? "bg-[#0a0a0f]/90" : "bg-white/90"
-            } glass shadow-lg shadow-black/5`
+              darkMode ? "bg-[#0a0a0a]/95" : "bg-white/95"
+            } border-b ${theme.border} backdrop-blur-sm`
           : "bg-transparent"
       }`}
     >
@@ -27,44 +27,35 @@ export default function Navbar({ scrolled }) {
               mounted ? "animate-slideInLeft" : "opacity-0"
             }`}
           >
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl blur opacity-40 group-hover:opacity-60 transition duration-500"></div>
-              <div className="relative w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                MT
-              </div>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className={`text-xl font-bold tracking-tight ${theme.text}`}>
+            <div className="flex items-center gap-3">
+              <img
+                src="/logo.jpeg"
+                alt="Merkez Tedarik"
+                className="h-12 w-auto object-contain rounded-lg"
+              />
+              <span className={`font-display text-xl font-bold tracking-tight ${theme.text}`}>
                 MERKEZ TEDARİK
-              </h1>
-              <p className={`text-xs font-medium ${theme.textMuted}`}>
-                Premium Ambalaj Çözümleri
-              </p>
+              </span>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((item, i) => (
               <a
                 key={item.name}
                 href={item.href}
-                className={`relative px-5 py-2.5 rounded-full font-medium transition-all duration-300 group ${
+                className={`px-5 py-2.5 font-medium transition-colors duration-300 ${
                   darkMode
-                    ? "text-zinc-400 hover:text-white"
-                    : "text-zinc-600 hover:text-zinc-900"
+                    ? "text-[#8a8580] hover:text-[#f0ede8]"
+                    : "text-[#6b6b6b] hover:text-[#111111]"
                 }`}
                 style={{
-                  animationDelay: `${i * 0.1}s`,
                   opacity: mounted ? 1 : 0,
+                  transition: `opacity 0.3s ${i * 0.1}s, color 0.3s`,
                 }}
               >
-                <span className="relative z-10">{item.name}</span>
-                <span
-                  className={`absolute inset-0 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 ${
-                    darkMode ? "bg-white/5" : "bg-black/5"
-                  }`}
-                ></span>
+                {item.name}
               </a>
             ))}
           </div>
@@ -73,30 +64,32 @@ export default function Navbar({ scrolled }) {
           <div className="flex items-center gap-3">
             <button
               onClick={toggleDarkMode}
-              className={`relative p-3 rounded-full transition-all duration-300 group ${
+              className={`p-3 rounded-full transition-colors duration-300 ${
                 darkMode
-                  ? "bg-zinc-800/50 hover:bg-zinc-700/50 text-yellow-400"
-                  : "bg-zinc-100 hover:bg-zinc-200 text-zinc-700"
+                  ? "text-[#c4a265] hover:bg-[#1a1a1a]"
+                  : "text-[#6b6b6b] hover:bg-[#f5f5f0]"
               }`}
             >
-              <span className="relative z-10">
-                {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-              </span>
+              {darkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
             <a
               href="#iletisim"
-              className="hidden sm:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold text-sm btn-primary"
+              className={`hidden sm:flex items-center gap-2 px-6 py-3 rounded-[6px] font-semibold text-sm transition-all duration-300 ${
+                darkMode
+                  ? "bg-white text-[#111111] hover:bg-[#f0ede8]"
+                  : "bg-[#111111] text-white hover:bg-[#333333]"
+              }`}
             >
               <span>Teklif Al</span>
               <ArrowUpRight size={16} />
             </a>
 
             <button
-              className={`lg:hidden p-3 rounded-xl ${
+              className={`lg:hidden p-3 rounded-[6px] ${
                 darkMode
-                  ? "bg-zinc-800/50 text-white"
-                  : "bg-zinc-100 text-zinc-700"
+                  ? "text-[#f0ede8] hover:bg-[#1a1a1a]"
+                  : "text-[#111111] hover:bg-[#f5f5f0]"
               }`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -110,15 +103,15 @@ export default function Navbar({ scrolled }) {
           <div
             className={`lg:hidden py-6 border-t ${theme.border} animate-fadeUp`}
           >
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1">
               {navLinks.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`px-4 py-3 rounded-xl font-medium transition-all ${
+                  className={`px-4 py-3 font-medium transition-colors ${
                     darkMode
-                      ? "text-zinc-300 hover:bg-zinc-800/50"
-                      : "text-zinc-700 hover:bg-zinc-100"
+                      ? "text-[#8a8580] hover:text-[#f0ede8]"
+                      : "text-[#6b6b6b] hover:text-[#111111]"
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -127,7 +120,11 @@ export default function Navbar({ scrolled }) {
               ))}
               <a
                 href="#iletisim"
-                className="mt-4 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-semibold text-center"
+                className={`mt-4 px-6 py-3 rounded-[6px] font-semibold text-center transition-all ${
+                  darkMode
+                    ? "bg-white text-[#111111]"
+                    : "bg-[#111111] text-white"
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Teklif Al

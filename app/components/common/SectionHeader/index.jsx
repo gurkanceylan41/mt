@@ -9,7 +9,7 @@ export default function SectionHeader({ badge, title, gradientText, subtitle }) 
       {badge && <Badge>{badge}</Badge>}
       <h2 className={`section-title ${theme.text}`}>
         {title}
-        {gradientText && <span className="text-gradient"> {gradientText}</span>}
+        {gradientText && <span className={theme.accent}> {gradientText}</span>}
       </h2>
       {subtitle && (
         <p className={`section-subtitle ${theme.textMuted}`}>{subtitle}</p>

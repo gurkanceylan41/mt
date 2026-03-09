@@ -5,14 +5,18 @@ export default function HeroStats() {
   const { theme, mounted } = useThemeContext();
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+    <div className="flex flex-wrap gap-0">
       {stats.map((stat, i) => (
         <div
           key={i}
-          className={mounted ? "animate-fadeUp" : "opacity-0"}
+          className={`pr-8 ${
+            i < stats.length - 1 ? `mr-8 border-r ${theme.border}` : ""
+          } ${mounted ? "animate-fadeUp" : "opacity-0"}`}
           style={{ animationDelay: `${0.3 + i * 0.1}s` }}
         >
-          <div className="text-3xl sm:text-4xl font-bold text-gradient mb-1">
+          <div
+            className={`font-display text-3xl sm:text-4xl font-semibold mb-1 ${theme.accent}`}
+          >
             {stat.number}
             {stat.suffix}
           </div>

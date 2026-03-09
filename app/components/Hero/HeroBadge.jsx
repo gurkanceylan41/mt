@@ -5,22 +5,23 @@ export default function HeroBadge() {
 
   return (
     <div
-      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 ${
+      className={`inline-flex items-center gap-3 px-4 py-2 rounded-[4px] mb-8 ${
         darkMode
-          ? "bg-blue-500/10 border border-blue-500/20"
-          : "bg-blue-50 border border-blue-100"
+          ? "bg-[#c4a265]/10 border border-[#c4a265]/20"
+          : "bg-[#9a7740]/8 border border-[#9a7740]/15"
       }`}
     >
-      <span className="relative flex h-2 w-2">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-      </span>
       <span
-        className={`text-sm font-semibold ${
-          darkMode ? "text-blue-400" : "text-blue-600"
+        className={`w-1.5 h-1.5 rounded-full ${
+          darkMode ? "bg-[#c4a265]" : "bg-[#9a7740]"
+        }`}
+      />
+      <span
+        className={`text-sm font-semibold tracking-wide ${
+          darkMode ? "text-[#c4a265]" : "text-[#9a7740]"
         }`}
       >
-        Türkiye&apos;nin Lider Ambalaj Tedarikçisi
+        Global İhracat & Toptan Tedarik Partneri
       </span>
     </div>
   );

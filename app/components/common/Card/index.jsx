@@ -6,7 +6,7 @@ export default function Card({ children, className = "", hover = false }) {
   return (
     <div
       className={`card ${darkMode ? "card-dark" : "card-light"} ${
-        hover ? "hover-lift card-shine" : ""
+        hover ? "card-hover" : ""
       } ${className}`}
     >
       {children}

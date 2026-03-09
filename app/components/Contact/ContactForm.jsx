@@ -22,19 +22,18 @@ export default function ContactForm({
 
   return (
     <div
-      className={`p-8 sm:p-10 rounded-3xl ${
+      className={`p-8 sm:p-10 rounded-lg border ${
         darkMode
-          ? "bg-zinc-900/70 border border-zinc-800"
-          : "bg-white shadow-2xl shadow-zinc-200/50"
+          ? "bg-[#161616] border-[#2a2825]"
+          : "bg-white border-[#e8e5df]"
       }`}
     >
-      <h3 className={`text-2xl font-bold mb-8 ${theme.text}`}>
+      <h3 className={`font-display text-2xl font-semibold mb-8 ${theme.text}`}>
         Bize Mesaj Gönderin
       </h3>
 
-      {/* Başarı Mesajı */}
       {formStatus.success && (
-        <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-xl flex items-center gap-3">
+        <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center gap-3">
           <CheckCircle className="text-green-500 flex-shrink-0" size={20} />
           <span className="text-green-500 font-medium">
             Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.
@@ -42,9 +41,8 @@ export default function ContactForm({
         </div>
       )}
 
-      {/* Hata Mesajı */}
       {formStatus.error && (
-        <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center gap-3">
+        <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center gap-3">
           <X className="text-red-500 flex-shrink-0" size={20} />
           <span className="text-red-500 font-medium">
             Mesaj gönderilemedi. Lütfen tekrar deneyin veya bizi telefonla arayın.
@@ -54,7 +52,6 @@ export default function ContactForm({
 
       <form ref={formRef} onSubmit={onSubmit} className="space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {/* Ad Soyad */}
           <div className="space-y-2">
             <label className={`block text-sm font-semibold ${theme.text}`}>
               Ad Soyad <span className="text-red-500">*</span>
@@ -70,7 +67,6 @@ export default function ContactForm({
             />
           </div>
 
-          {/* E-posta */}
           <div className="space-y-2">
             <label className={`block text-sm font-semibold ${theme.text}`}>
               E-posta <span className="text-red-500">*</span>
@@ -87,7 +83,6 @@ export default function ContactForm({
           </div>
         </div>
 
-        {/* Telefon */}
         <div className="space-y-2">
           <label className={`block text-sm font-semibold ${theme.text}`}>
             Telefon
@@ -102,7 +97,6 @@ export default function ContactForm({
           />
         </div>
 
-        {/* Konu */}
         <div className="space-y-2">
           <label className={`block text-sm font-semibold ${theme.text}`}>
             Konu <span className="text-red-500">*</span>
@@ -122,7 +116,6 @@ export default function ContactForm({
           </select>
         </div>
 
-        {/* Mesaj */}
         <div className="space-y-2">
           <label className={`block text-sm font-semibold ${theme.text}`}>
             Mesajınız <span className="text-red-500">*</span>
@@ -138,15 +131,16 @@ export default function ContactForm({
           />
         </div>
 
-        {/* Submit Button */}
         <button
           type="submit"
           disabled={formStatus.loading}
-          className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all duration-300 ${
+          className={`w-full py-4 rounded-[6px] font-semibold flex items-center justify-center gap-2 transition-all duration-300 ${
             formStatus.loading
-              ? "bg-zinc-400 cursor-not-allowed"
-              : "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 hover:shadow-lg hover:shadow-blue-500/30"
-          } text-white`}
+              ? "bg-[#6b6b6b] cursor-not-allowed"
+              : darkMode
+              ? "bg-white text-[#111111] hover:bg-[#f0ede8]"
+              : "bg-[#111111] text-white hover:bg-[#333333]"
+          } ${formStatus.loading ? "text-white" : ""}`}
         >
           {formStatus.loading ? (
             <>

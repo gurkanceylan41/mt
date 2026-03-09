@@ -14,12 +14,14 @@ export default function CategoryFilter({ activeCategory, onCategoryChange }) {
             <button
               key={cat.key}
               onClick={() => onCategoryChange(cat.key)}
-              className={`px-6 py-3 rounded-full font-semibold text-sm transition-all ${
+              className={`px-6 py-3 rounded-[6px] font-semibold text-sm transition-all duration-300 ${
                 activeCategory === cat.key
-                  ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg"
+                  ? darkMode
+                    ? "bg-white text-[#111111]"
+                    : "bg-[#111111] text-white"
                   : darkMode
-                  ? "bg-zinc-800 text-zinc-400 hover:bg-zinc-700"
-                  : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200"
+                  ? "border border-[#2a2825] text-[#8a8580] hover:border-[#c4a265]"
+                  : "border border-[#e8e5df] text-[#6b6b6b] hover:border-[#9a7740]"
               }`}
             >
               {cat.label}

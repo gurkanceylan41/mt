@@ -66,23 +66,23 @@ export const products = [
 export const testimonials = [
   {
     name: "Ahmet Yılmaz",
-    company: "ABC Lojistik",
-    role: "Satın Alma Müdürü",
-    text: "15 yıldır Merkez Tedarik ile çalışıyoruz. Kalite ve hizmet anlayışları her zaman mükemmel oldu. Teslimat süreleri ve fiyat politikaları sektördeki en iyilerden.",
+    company: "GlobalTrade GmbH",
+    role: "İthalat Müdürü",
+    text: "Almanya'ya yaptığımız ithalatlarda Merkez Tedarik'i tercih ediyoruz. Geniş ürün yelpazesi ve profesyonel ihracat süreçleri işimizi çok kolaylaştırıyor.",
     avatar: "AY",
   },
   {
-    name: "Ayşe Demir",
-    company: "XYZ Gıda A.Ş.",
-    role: "Operasyon Direktörü",
-    text: "Gıda sektöründe çalışıyoruz ve hijyen çok önemli. Merkez Tedarik'in sertifikalı ürünleri bize güven veriyor. Siparişlerimiz her zaman zamanında geliyor.",
-    avatar: "AD",
+    name: "Sarah Johnson",
+    company: "UK Wholesale Ltd.",
+    role: "Purchasing Director",
+    text: "Merkez Tedarik has been our trusted supplier for toys and home products. Their quality standards and competitive pricing make them stand out in the market.",
+    avatar: "SJ",
   },
   {
     name: "Mehmet Kaya",
-    company: "DEF Ambalaj San.",
+    company: "Kaya Ticaret A.Ş.",
     role: "Genel Müdür",
-    text: "Fiyat-performans açısından piyasadaki en iyi tedarikçi. Teknik destek ekibi her zaman yardımcı oluyor. Kesinlikle tavsiye ediyorum.",
+    text: "8 farklı kategoride toptan alım yapabilmek büyük avantaj. Tek tedarikçiden tüm ihtiyaçlarımızı karşılıyoruz. Fiyat-performans açısından piyasadaki en iyiler.",
     avatar: "MK",
   },
 ];
@@ -90,15 +90,15 @@ export const testimonials = [
 // İstatistikler
 export const stats = [
   { number: "15+", label: "Yıllık Deneyim", suffix: "" },
-  { number: "500+", label: "Mutlu Müşteri", suffix: "" },
-  { number: "50K", label: "Teslim Edilen Ürün", suffix: "+" },
-  { number: "7/24", label: "Destek Hizmeti", suffix: "" },
+  { number: "50+", label: "İhracat Ülkesi", suffix: "" },
+  { number: "1000+", label: "Ürün Çeşidi", suffix: "" },
+  { number: "8", label: "Farklı Kategori", suffix: "" },
 ];
 
 // Navigasyon Linkleri
 export const navLinks = [
   { name: "Ana Sayfa", href: "/#anasayfa" },
-  { name: "Ürünler", href: "/product" },
+  { name: "Ürünler", href: "/catalog" },
   { name: "Hakkımızda", href: "/#hakkimizda" },
   { name: "İletişim", href: "/#iletisim" },
 ];
@@ -106,24 +106,20 @@ export const navLinks = [
 // Özellikler
 export const features = [
   {
-    title: "Geniş Ürün Yelpazesi",
-    desc: "Her ihtiyaca özel premium çözümler",
-    color: "from-blue-500 to-blue-600",
+    title: "8 Farklı Kategori",
+    desc: "Oyuncaktan elektroniğe geniş ürün yelpazesi",
   },
   {
-    title: "Hızlı Kargo",
-    desc: "24 saat içinde teslimat garantisi",
-    color: "from-violet-500 to-violet-600",
+    title: "Global İhracat",
+    desc: "50+ ülkeye güvenli teslimat",
   },
   {
-    title: "Kalite Garantisi",
-    desc: "ISO sertifikalı premium ürünler",
-    color: "from-emerald-500 to-emerald-600",
+    title: "Toptan Fiyat",
+    desc: "Rekabetçi fiyatlarla toplu alım avantajı",
   },
   {
     title: "15+ Yıl Deneyim",
-    desc: "Sektörde güvenilir isim",
-    color: "from-amber-500 to-amber-600",
+    desc: "Uluslararası ticarette güvenilir partner",
   },
 ];
 
@@ -154,4 +150,5 @@ export const categories = [
   { key: "tumu", label: "Tüm Ürünler" },
   { key: "endustriyel", label: "Endüstriyel" },
   { key: "gida", label: "Gıda" },
+  { key: "cocuk-guvenlik", label: "Çocuk Güvenliği" },
 ];

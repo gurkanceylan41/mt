@@ -15,17 +15,13 @@ export default function ContactInfo() {
 
   return (
     <div>
-      <span
-        className={`inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 ${
-          darkMode ? "bg-blue-500/10 text-blue-400" : "bg-blue-50 text-blue-600"
-        }`}
-      >
+      <span className={`badge mb-6 ${darkMode ? "badge-dark" : "badge-light"}`}>
         İLETİŞİM
       </span>
 
-      <h2 className={`text-4xl sm:text-5xl font-bold mb-6 ${theme.text}`}>
+      <h2 className={`section-title ${theme.text}`}>
         Size Nasıl
-        <span className="text-gradient"> Yardımcı Olabiliriz?</span>
+        <span className={theme.accent}> Yardımcı Olabiliriz?</span>
       </h2>
 
       <p className={`text-lg leading-relaxed mb-12 ${theme.textMuted}`}>
@@ -38,17 +34,25 @@ export default function ContactInfo() {
           <a
             key={i}
             href={item.href}
-            className={`group flex items-start gap-5 p-6 rounded-2xl transition-all duration-300 ${
+            className={`group flex items-start gap-5 p-6 rounded-lg border transition-all duration-300 ${
               darkMode
-                ? "bg-zinc-900/50 border border-zinc-800 hover:border-blue-500/50"
-                : "bg-white border border-zinc-100 hover:border-blue-200 shadow-sm hover:shadow-lg"
+                ? "bg-[#161616] border-[#2a2825] hover:border-[#c4a265]"
+                : "bg-white border-[#e8e5df] hover:border-[#9a7740]"
             }`}
           >
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+            <div
+              className={`w-14 h-14 rounded-lg border flex items-center justify-center flex-shrink-0 ${
+                darkMode
+                  ? "border-[#2a2825] text-[#c4a265]"
+                  : "border-[#e8e5df] text-[#9a7740]"
+              }`}
+            >
               {icons[i]}
             </div>
             <div>
-              <h3 className={`font-bold mb-1 ${theme.text}`}>{item.title}</h3>
+              <h3 className={`font-semibold mb-1 ${theme.text}`}>
+                {item.title}
+              </h3>
               <p className={`font-medium ${theme.text}`}>{item.info}</p>
               <p className={theme.textMuted}>{item.subInfo}</p>
             </div>

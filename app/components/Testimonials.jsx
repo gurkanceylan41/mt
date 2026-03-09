@@ -17,46 +17,28 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className={`py-24 ${theme.bg} relative overflow-hidden`}>
-      {/* Background Decoration */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div
-          className={`absolute top-0 left-0 w-96 h-96 rounded-full blur-[150px] ${
-            darkMode ? "bg-blue-500/10" : "bg-blue-500/5"
-          }`}
-        />
-        <div
-          className={`absolute bottom-0 right-0 w-96 h-96 rounded-full blur-[150px] ${
-            darkMode ? "bg-violet-500/10" : "bg-violet-500/5"
-          }`}
-        />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+    <section className={`py-32 ${theme.bg} relative`}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <span
-            className={`inline-block px-4 py-2 rounded-full text-sm font-semibold mb-4 ${
-              darkMode
-                ? "bg-blue-500/10 text-blue-400"
-                : "bg-blue-50 text-blue-600"
-            }`}
+            className={`badge mb-4 ${darkMode ? "badge-dark" : "badge-light"}`}
           >
             MÜŞTERİ YORUMLARI
           </span>
-          <h2 className={`text-4xl sm:text-5xl font-bold ${theme.text}`}>
+          <h2 className={`section-title ${theme.text}`}>
             Müşterilerimiz
-            <span className="text-gradient"> Ne Diyor?</span>
+            <span className={theme.accent}> Ne Diyor?</span>
           </h2>
         </div>
 
         {/* Testimonials Carousel */}
         <div className="max-w-4xl mx-auto relative">
           <div
-            className={`p-10 sm:p-12 rounded-3xl ${
+            className={`p-10 sm:p-12 rounded-lg border ${
               darkMode
-                ? "bg-zinc-900/50 border border-zinc-800"
-                : "bg-white shadow-xl shadow-zinc-200/50"
+                ? "bg-[#161616] border-[#2a2825]"
+                : "bg-white border-[#e8e5df]"
             }`}
           >
             {/* Stars */}
@@ -84,23 +66,27 @@ export default function Testimonials() {
                   }`}
                 >
                   <blockquote
-                    className={`text-xl sm:text-2xl leading-relaxed mb-8 ${theme.text}`}
+                    className={`font-display text-xl sm:text-2xl leading-relaxed mb-8 ${theme.text}`}
                   >
                     &ldquo;{testimonial.text}&rdquo;
                   </blockquote>
 
                   <div className="flex items-center gap-4">
                     <div
-                      className={`w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-violet-500 flex items-center justify-center text-white font-bold`}
+                      className={`w-12 h-12 rounded-lg flex items-center justify-center font-bold ${
+                        darkMode
+                          ? "bg-[#c4a265] text-[#0a0a0a]"
+                          : "bg-[#9a7740] text-white"
+                      }`}
                     >
                       {testimonial.avatar}
                     </div>
                     <div>
-                      <p className={`font-bold ${theme.text}`}>
+                      <p className={`font-semibold ${theme.text}`}>
                         {testimonial.name}
                       </p>
                       <p className={`text-sm ${theme.textMuted}`}>
-                        {testimonial.role} • {testimonial.company}
+                        {testimonial.role} · {testimonial.company}
                       </p>
                     </div>
                   </div>
@@ -109,16 +95,20 @@ export default function Testimonials() {
             </div>
 
             {/* Navigation */}
-            <div className="flex items-center justify-between mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+            <div
+              className={`flex items-center justify-between mt-8 pt-8 border-t ${theme.border}`}
+            >
               <div className="flex gap-2">
                 {testimonials.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setActiveTestimonial(i)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
                       i === activeTestimonial
-                        ? "w-8 bg-blue-500"
-                        : `w-2 ${darkMode ? "bg-zinc-700" : "bg-zinc-300"}`
+                        ? `w-8 ${darkMode ? "bg-[#c4a265]" : "bg-[#9a7740]"}`
+                        : `w-1.5 ${
+                            darkMode ? "bg-[#2a2825]" : "bg-[#e8e5df]"
+                          }`
                     }`}
                   />
                 ))}
@@ -132,10 +122,10 @@ export default function Testimonials() {
                         (prev - 1 + testimonials.length) % testimonials.length
                     )
                   }
-                  className={`p-3 rounded-full transition-all ${
+                  className={`p-3 rounded-[6px] transition-all ${
                     darkMode
-                      ? "bg-zinc-800 hover:bg-zinc-700 text-white"
-                      : "bg-zinc-100 hover:bg-zinc-200 text-zinc-700"
+                      ? "border border-[#2a2825] text-[#f0ede8] hover:border-[#c4a265]"
+                      : "border border-[#e8e5df] text-[#111111] hover:border-[#9a7740]"
                   }`}
                 >
                   <ChevronLeft size={20} />
@@ -146,10 +136,10 @@ export default function Testimonials() {
                       (prev) => (prev + 1) % testimonials.length
                     )
                   }
-                  className={`p-3 rounded-full transition-all ${
+                  className={`p-3 rounded-[6px] transition-all ${
                     darkMode
-                      ? "bg-zinc-800 hover:bg-zinc-700 text-white"
-                      : "bg-zinc-100 hover:bg-zinc-200 text-zinc-700"
+                      ? "border border-[#2a2825] text-[#f0ede8] hover:border-[#c4a265]"
+                      : "border border-[#e8e5df] text-[#111111] hover:border-[#9a7740]"
                   }`}
                 >
                   <ChevronRight size={20} />

@@ -1,5 +1,19 @@
+import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./contexts/ThemeContext";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata = {
   title: "Merkez Tedarik - Premium Ambalaj Çözümleri",
@@ -10,7 +24,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="tr">
-      <body>
+      <body
+        className={`${inter.variable} ${cormorant.variable} ${inter.className}`}
+      >
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
