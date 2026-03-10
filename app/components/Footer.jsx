@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { navLinks } from "../data";
 import { useThemeContext } from "../contexts/ThemeContext";
@@ -21,13 +22,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-6">
+            <Link href="/" className="block mb-6">
               <img
                 src="/logo.jpeg"
                 alt="Merkez Tedarik"
                 className="h-16 w-auto object-contain"
               />
-            </div>
+            </Link>
             <p className="text-[#8a8580] text-sm leading-relaxed mb-6">
               15 yılı aşkın deneyimimizle 50+ ülkeye ihracat yapan güvenilir
               toptan tedarik partneriniz.

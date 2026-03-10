@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Sun, Moon, Menu, X, ArrowUpRight } from "lucide-react";
 import { navLinks } from "../data";
 import { useThemeContext } from "../contexts/ThemeContext";
@@ -22,7 +23,8 @@ export default function Navbar({ scrolled }) {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div
+          <Link
+            href="/"
             className={`flex items-center gap-4 ${
               mounted ? "animate-slideInLeft" : "opacity-0"
             }`}
@@ -37,7 +39,7 @@ export default function Navbar({ scrolled }) {
                 MERKEZ TEDARİK
               </span>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
